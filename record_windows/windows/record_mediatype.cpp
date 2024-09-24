@@ -31,6 +31,14 @@ namespace record_windows
 		}
 		if (SUCCEEDED(hr))
 		{
+			hr = pMediaType->SetUINT32(MF_MT_AUDIO_BLOCK_ALIGNMENT, 2);
+		}
+		if (SUCCEEDED(hr))
+		{
+			hr = pMediaType->SetUINT32(MF_MT_AUDIO_SAMPLES_PER_BLOCK, 480);
+		}
+		if (SUCCEEDED(hr))
+		{
 			hr = pMediaType->SetUINT32(MF_MT_AUDIO_NUM_CHANNELS, m_pConfig->numChannels);
 		}
 		if (SUCCEEDED(hr))
